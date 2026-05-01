@@ -7,3 +7,5 @@ para simular um sistema de locação de veículos. A proposta é oferecer uma in
 simples e intuitiva, onde o usuário possa visualizar carros disponíveis, consultar 
 informações e simular reservas de forma prática. O foco será garantir boa usabilidade, 
 acessibilidade. 
+
+Dupla Ian Quaresma e Wanderson Bruno
