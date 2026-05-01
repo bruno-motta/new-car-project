@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+
+  --fs-base: clamp(0.9rem, 2vw, 1rem);
+  --fs-h1: clamp(1.5rem, 4vw, 2.5rem);
+  --fs-h2: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  overflow-x: hidden; /*Adicionado quando foi encontrado o overflow*/
+}
+
+
+main {  /* Na responsividade as "frases" ficaram sem margem, feito gloabalmente para controle de layout.*/
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-sm);
+}
+
+section {
+  margin-bottom: var(--space-lg);
+}
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+
+.hero {
+  text-align: center;
+  padding: var(--space-md) 0;
+}
+
+.hero h1 {
+  font-size: var(--fs-h1);
+}
+
+/* FORM */
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.search input,
+.search select,
+.search button {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+.categories-list {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+}
+
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: var(--space-sm);
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+.footer {
+  text-align: center;
+  padding: var(--space-md);
+}
+
+/* RESPONSIVIDADE PARA TABLET*/
+@media (min-width: 768px) {
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .search input,
+  .search select {
+    flex: 1;
+    min-width: 120px; /*evita quebrar layout */
+  }
+
+  .search button {
+    width: auto;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* RESPONSIVIDADE PARA TELA(desktop)*/
+@media (min-width: 1024px) {
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
