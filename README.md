@@ -1,6 +1,6 @@
-#projeto new car
+## New car - Locadora de veiculos
 
-## projeto cadeira Aplicações Para Internet 
+### Projeto cadeira Aplicações Para Internet 
 
 O projeto NewDrive consiste no desenvolvimento de uma aplicação web responsiva 
 para simular um sistema de locação de veículos. A proposta é oferecer uma interface 
