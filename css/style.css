@@ -6,11 +6,6 @@
   padding: 0;
 }
 
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
 
 :root {
   --space-xs: 0.5rem;
@@ -24,25 +19,16 @@ img, video, iframe {
 }
 
 body {
+  background-color: rgba(25, 45, 55);
   font-family: Arial, sans-serif;
   font-size: var(--fs-base);
+  color: #ccc;
   line-height: 1.6;
   overflow-x: hidden; /*Adicionado quando foi encontrado o overflow*/
 }
 
-
-main {  /* Na responsividade as "frases" ficaram sem margem, feito gloabalmente para controle de layout.*/
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-sm);
-}
-
-section {
-  margin-bottom: var(--space-lg);
-}
-
-
 .header {
+  background-color: #efefef;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +41,22 @@ section {
   flex-wrap: wrap;
   gap: var(--space-xs);
   list-style: none;
+}
+
+main {  /* Na responsividade as "frases" ficaram sem margem, feito gloabalmente para controle de layout.*/
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-sm);
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  margin-bottom: var(--space-lg);
 }
 
 .actions {
