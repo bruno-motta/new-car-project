@@ -29,4 +29,4 @@ acessibilidade.
 
 
 ---
-Dupla Ian Quaresma e Wanderson Bruno
+Equipe Ian Quaresma, Wanderson Bruno e Caio Melo
