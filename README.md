@@ -23,6 +23,10 @@ acessibilidade.
     
 <img width="1918" height="1078" alt="image" src="https://github.com/user-attachments/assets/ee341356-3072-4b7f-b8e5-d9e0ce5e0e75" />
 
+### Wireframe
+<img width="513" height="642" alt="image" src="https://github.com/user-attachments/assets/3443a400-be38-4032-9f92-95f9183f951a" />
+
+
 
 ---
 Dupla Ian Quaresma e Wanderson Bruno
