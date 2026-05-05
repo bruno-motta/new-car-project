@@ -4,22 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEW CAR - Aluguel de carros</title>
+
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <header class="header">
     <div class="logo">NEW CAR</div>
-
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Carros</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </nav>
-
     <div class="actions">
       <button>❤</button>
       <button>👤</button>
@@ -28,7 +23,6 @@
 
   <main>
 
-  
     <section class="hero">
       <h1>Encontre o carro ideal</h1>
       <p>Rápido, fácil e com os melhores preços</p>
@@ -46,48 +40,30 @@
       </form>
     </section>
 
-    
-    <section class="categories">
-      <h2>Categorias</h2>
-      <div class="categories-list">
-        <button>SUV</button>
-        <button>Sedan</button>
-        <button>Econômico</button>
-        <button>Luxo</button>
-      </div>
-    </section>
 
-    
     <section class="cars">
       <h2>Carros disponíveis</h2>
 
       <div class="cards-grid">
+
         <article class="card">
-          <img src="assets/images/bmwX1.webp" alt="Carro 1">
+          <img src="assets/images/bmw-1.jpg" alt="bmw-x1">
           <h3>BMW X1</h3>
           <p>R$ 250/dia</p>
-          <button>Alugar</button>
+          <button class="detalhe" data-car="BMW X1">Detalhe</button>
         </article>
 
         <article class="card">
-          <img src="assets/images/hb20.webp" alt="Carro 2">
+          <img src="assets/images/69022-26530-HB20-SENSE-1.png" alt="hb20">
           <h3>HB20</h3>
           <p>R$ 120/dia</p>
-          <button>Alugar</button>
+          <button class="detalhe" data-car="HB20">Detalhe</button>
         </article>
+
       </div>
     </section>
 
-    
-    <section class="reviews">
-      <h2>Avaliações</h2>
-      <div class="review">
-        <p>"Ótimo serviço!"</p>
-        <span>- João</span>
-      </div>
-    </section>
 
-    
     <section class="faq">
       <h2>Perguntas Frequentes</h2>
       <details>
@@ -96,7 +72,6 @@
       </details>
     </section>
 
-    
     <section class="newsletter">
       <h2>Receba ofertas</h2>
       <input type="email" placeholder="Seu email">
@@ -108,6 +83,52 @@
   <footer class="footer">
     <p>© 2026 NEW CAR</p>
   </footer>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <img id="modalImg" src="" alt="carro" style="width:100%; border-radius:10px; margin-bottom:10px;">
+
+      <h2 id="modalTitle">Carro</h2>
+      <p id="modalDesc">Detalhes do carro</p>
+
+      <button>Reservar</button>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const closeBtn = document.querySelector(".close");
+    const buttons = document.querySelectorAll(".detalhe");
+
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+
+    // Abrir modal
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const car = btn.getAttribute("data-car");
+
+        modalTitle.textContent = car;
+        modalDesc.textContent = `Você selecionou o ${car}.`;
+        modal.style.display = "flex";
+      });
+    });
+
+    // Fechar no X
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+
+    // Fechar clicando fora
+    window.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 
 </body>
 </html>
