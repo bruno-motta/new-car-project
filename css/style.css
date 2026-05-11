@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-
 :root {
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -16,15 +15,70 @@
   --fs-base: clamp(0.9rem, 2vw, 1rem);
   --fs-h1: clamp(1.5rem, 4vw, 2.5rem);
   --fs-h2: clamp(1.2rem, 3vw, 1.8rem);
+  --fs-h3: clamp(1.5rem, 2vw, 2.5rem);
+
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+
+  /* Tamanhos */
+  --fs-base: clamp(0.95rem, 1.5vw, 1.05rem);
+  --fs-h1: clamp(2rem, 5vw, 3rem);
+  --fs-h2: clamp(1.4rem, 3vw, 2rem);
+
+  /* Peso */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 600;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
 }
 
 body {
-  background-color: rgba(25, 45, 55);
-  font-family: Arial, sans-serif;
-  font-size: var(--fs-base);
+  background-color: rgb(25, 45, 55);
+  font-family: var(--font-primary);
+  font-weight: var(--fw-regular);
   color: #ccc;
   line-height: 1.6;
-  overflow-x: hidden; /*Adicionado quando foi encontrado o overflow*/
+  overflow-x: hidden;
+  letter-spacing: 0.3px;
+}
+
+.logo {
+  color: rgb(25, 45, 55);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-sm);
+}
+
+section {
+  margin-bottom: var(--space-lg);
 }
 
 .header {
@@ -35,7 +89,12 @@ body {
   gap: var(--space-sm);
   padding: var(--space-sm);
 }
-/* A classe .nav- foi adicionada para organizar os links de navegação e evitar que eles fiquem amontoados, especialmente em telas menores. */
+
+.footer {
+  text-align: center;
+  padding: var(--space-md);
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -43,113 +102,14 @@ body {
   list-style: none;
 }
 
-main {  /* Na responsividade as "frases" ficaram sem margem, feito gloabalmente para controle de layout.*/
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-sm);
-}
-
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-section {
-  margin-bottom: var(--space-lg);
-}
-
 .actions {
   display: flex;
   gap: var(--space-xs);
 }
 
-
-.hero {
-  text-align: center;
-  padding: var(--space-md) 0;
-}
-
-.hero h1 {
-  font-size: var(--fs-h1);
-}
-
-/* FORM */
-.search {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-}
-
-.search input,
-.search select,
-.search button {
-  width: 100%;
-  padding: var(--space-sm);
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-
-.categories-list {
-  display: flex;
-  gap: var(--space-sm);
-  overflow-x: auto;
-}
-
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
-}
-
-.card {
-  border: 1px solid #ccc;
-  padding: var(--space-sm);
-  border-radius: 8px;
-  text-align: center;
-}
-
-
-.footer {
-  text-align: center;
-  padding: var(--space-md);
-}
-
-/* RESPONSIVIDADE PARA TABLET*/
 @media (min-width: 768px) {
-
   .header {
     flex-direction: row;
     justify-content: space-between;
-  }
-
-  .search {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .search input,
-  .search select {
-    flex: 1;
-    min-width: 120px; /*evita quebrar layout */
-  }
-
-  .search button {
-    width: auto;
-  }
-
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* RESPONSIVIDADE PARA TELA(desktop)*/
-@media (min-width: 1024px) {
-
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
