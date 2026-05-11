@@ -9,12 +9,14 @@
   <link rel="stylesheet" href="css/index.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
   <header class="header">
     <div class="logo">NEW CAR</div>
+    <img src="/assets/images/logo-2.png">
     <div class="actions">
       <button>❤</button>
       <button>👤</button>
@@ -40,29 +42,47 @@
       </form>
     </section>
 
-
     <section class="cars">
       <h2>Carros disponíveis</h2>
 
       <div class="cards-grid">
 
+        <!-- BMW -->
         <article class="card">
           <img src="assets/images/bmw-1.jpg" alt="bmw-x1">
           <h3>BMW X1</h3>
           <p>R$ 250/dia</p>
-          <button class="detalhe" data-car="BMW X1">Detalhe</button>
+
+          <button 
+            class="detalhe"
+            data-car="BMW X1"
+            data-img="assets/images/bmw-1.jpg"
+            data-desc="SUV premium, automático, confortável e ideal para viagens."
+            data-price="R$ 250/dia"
+          >
+            Detalhe
+          </button>
         </article>
 
+        <!-- HB20 -->
         <article class="card">
           <img src="assets/images/69022-26530-HB20-SENSE-1.png" alt="hb20">
           <h3>HB20</h3>
           <p>R$ 120/dia</p>
-          <button class="detalhe" data-car="HB20">Detalhe</button>
+
+          <button 
+            class="detalhe"
+            data-car="HB20"
+            data-img="assets/images/69022-26530-HB20-SENSE-1.png"
+            data-desc="Compacto, econômico, perfeito para uso urbano."
+            data-price="R$ 120/dia"
+          >
+            Detalhe
+          </button>
         </article>
 
       </div>
     </section>
-
 
     <section class="faq">
       <h2>Perguntas Frequentes</h2>
@@ -89,12 +109,13 @@
     <div class="modal-content">
       <span class="close">&times;</span>
 
-      <img id="modalImg" src="" alt="carro" style="width:100%; border-radius:10px; margin-bottom:10px;">
+      <img id="modalImg" src="" alt="carro">
 
       <h2 id="modalTitle">Carro</h2>
       <p id="modalDesc">Detalhes do carro</p>
+      <p id="modalPrice"></p>
 
-      <button>Reservar</button>
+      <button id="reserva">Reservar</button>
     </div>
   </div>
 
@@ -105,28 +126,33 @@
 
     const modalTitle = document.getElementById("modalTitle");
     const modalDesc = document.getElementById("modalDesc");
+    const modalImg = document.getElementById("modalImg");
+    const modalPrice = document.getElementById("modalPrice");
 
     // Abrir modal
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
-        const car = btn.getAttribute("data-car");
+
+        const car = btn.dataset.car;
+        const img = btn.dataset.img;
+        const desc = btn.dataset.desc;
+        const price = btn.dataset.price;
 
         modalTitle.textContent = car;
-        modalDesc.textContent = `Você selecionou o ${car}.`;
+        modalDesc.textContent = desc;
+        modalPrice.textContent = price;
+        modalImg.src = img;
+
         modal.style.display = "flex";
       });
     });
 
     // Fechar no X
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
-    };
+    closeBtn.onclick = () => modal.style.display = "none";
 
     // Fechar clicando fora
     window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
+      if (e.target === modal) modal.style.display = "none";
     };
   </script>
 
