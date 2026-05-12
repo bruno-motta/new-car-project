@@ -1,0 +1,31 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: var(--space-sm);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.categories-list {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  padding: 50px;
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

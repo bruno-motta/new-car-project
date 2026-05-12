@@ -1,0 +1,15 @@
+.detalhe {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+#reserva {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 10px;
+}

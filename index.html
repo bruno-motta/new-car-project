@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEW CAR - Aluguel de carros</title>
-
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
-
+  <link rel="stylesheet" href="css/base/global.css">
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/variables.css">
+  <link rel="stylesheet" href="css/componets/buttons.css">
+  <link rel="stylesheet" href="css/componets/cards.css">
+  <link rel="stylesheet" href="css/componets/modal.css">
+  <link rel="stylesheet" href="css/componets/search.css">
+  <link rel="stylesheet" href="css/layout/footer.css">
+  <link rel="stylesheet" href="css/layout/header.css">
+  <link rel="stylesheet" href="css//pages/home.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -15,146 +24,196 @@
 <body>
 
   <header class="header">
+
     <div class="logo">NEW CAR</div>
-    <img src="/assets/images/logo-2.png">
+
+    <img
+      src="assets/images/logo-2.png"
+      alt="Logo NEW CAR"
+    >
+
     <div class="actions">
-      <button>❤</button>
-      <button>👤</button>
+
+      <button class="btn-icon">❤</button>
+
+      <button class="btn-icon">👤</button>
+
     </div>
+
   </header>
 
   <main>
 
+    <!-- HERO -->
+
     <section class="hero">
+
       <h1>Encontre o carro ideal</h1>
+
       <p>Rápido, fácil e com os melhores preços</p>
 
       <form class="search">
+
         <input type="text" placeholder="Local">
+
         <input type="date">
+
         <input type="date">
+
         <select>
           <option>Categoria</option>
           <option>SUV</option>
           <option>Sedan</option>
         </select>
-        <button type="submit">Buscar</button>
+
+        <button type="submit">
+          Buscar
+        </button>
+
       </form>
+
     </section>
 
+    <!-- CARDS -->
+
     <section class="cars">
+
       <h2>Carros disponíveis</h2>
 
       <div class="cards-grid">
 
         <!-- BMW -->
+
         <article class="card">
-          <img src="assets/images/bmw-1.jpg" alt="bmw-x1">
+
+          <img
+            src="assets/images/bmw-1.jpg"
+            alt="BMW X1"
+          >
+
           <h3>BMW X1</h3>
+
           <p>R$ 250/dia</p>
 
-          <button 
+          <button
             class="detalhe"
+
             data-car="BMW X1"
+
             data-img="assets/images/bmw-1.jpg"
+
             data-desc="SUV premium, automático, confortável e ideal para viagens."
+
             data-price="R$ 250/dia"
           >
-            Detalhe
+            Detalhes
           </button>
+
         </article>
 
         <!-- HB20 -->
+
         <article class="card">
-          <img src="assets/images/69022-26530-HB20-SENSE-1.png" alt="hb20">
+
+          <img
+            src="assets/images/69022-26530-HB20-SENSE-1.png"
+            alt="HB20"
+          >
+
           <h3>HB20</h3>
+
           <p>R$ 120/dia</p>
 
-          <button 
+          <button
             class="detalhe"
+
             data-car="HB20"
+
             data-img="assets/images/69022-26530-HB20-SENSE-1.png"
+
             data-desc="Compacto, econômico, perfeito para uso urbano."
+
             data-price="R$ 120/dia"
           >
-            Detalhe
+            Detalhes
           </button>
+
         </article>
 
       </div>
+
     </section>
+
+    <!-- FAQ -->
 
     <section class="faq">
+
       <h2>Perguntas Frequentes</h2>
+
       <details>
+
         <summary>Como funciona?</summary>
+
         <p>Você escolhe o carro e agenda.</p>
+
       </details>
+
     </section>
 
+    <!-- NEWSLETTER -->
+
     <section class="newsletter">
+
       <h2>Receba ofertas</h2>
+
       <input type="email" placeholder="Seu email">
+
       <button>Enviar</button>
+
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+
   <footer class="footer">
+
     <p>© 2026 NEW CAR</p>
+
   </footer>
 
   <!-- MODAL -->
+
   <div id="modal" class="modal">
+
     <div class="modal-content">
+
       <span class="close">&times;</span>
 
-      <img id="modalImg" src="" alt="carro">
+      <img
+        id="modalImg"
+        src=""
+        alt="Imagem do carro"
+      >
 
       <h2 id="modalTitle">Carro</h2>
-      <p id="modalDesc">Detalhes do carro</p>
+
+      <p id="modalDesc">
+        Detalhes do carro
+      </p>
+
       <p id="modalPrice"></p>
 
-      <button id="reserva">Reservar</button>
+      <button class="btn-reserva">
+        Reservar
+      </button>
+
     </div>
+
   </div>
 
-  <script>
-    const modal = document.getElementById("modal");
-    const closeBtn = document.querySelector(".close");
-    const buttons = document.querySelectorAll(".detalhe");
-
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDesc = document.getElementById("modalDesc");
-    const modalImg = document.getElementById("modalImg");
-    const modalPrice = document.getElementById("modalPrice");
-
-    // Abrir modal
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-
-        const car = btn.dataset.car;
-        const img = btn.dataset.img;
-        const desc = btn.dataset.desc;
-        const price = btn.dataset.price;
-
-        modalTitle.textContent = car;
-        modalDesc.textContent = desc;
-        modalPrice.textContent = price;
-        modalImg.src = img;
-
-        modal.style.display = "flex";
-      });
-    });
-
-    // Fechar no X
-    closeBtn.onclick = () => modal.style.display = "none";
-
-    // Fechar clicando fora
-    window.onclick = (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    };
-  </script>
+  <script src="js/main.js"></script>
 
 </body>
+
 </html>

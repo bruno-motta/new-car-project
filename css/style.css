@@ -1,115 +1,13 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+@import url('./base/reset.css');
+@import url('./base/variables.css');
+@import url('./base/global.css');
 
-:root {
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
+@import url('./layout/header.css');
+@import url('./layout/footer.css');
 
-  --fs-base: clamp(0.9rem, 2vw, 1rem);
-  --fs-h1: clamp(1.5rem, 4vw, 2.5rem);
-  --fs-h2: clamp(1.2rem, 3vw, 1.8rem);
-  --fs-h3: clamp(1.5rem, 2vw, 2.5rem);
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/modal.css');
+@import url('./components/search.css');
 
-  --font-primary: 'Inter', sans-serif;
-  --font-heading: 'Poppins', sans-serif;
-
-  /* Tamanhos */
-  --fs-base: clamp(0.95rem, 1.5vw, 1.05rem);
-  --fs-h1: clamp(2rem, 5vw, 3rem);
-  --fs-h2: clamp(1.4rem, 3vw, 2rem);
-
-  /* Peso */
-  --fw-light: 300;
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 600;
-}
-
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  font-weight: var(--fw-bold);
-  color: #ffffff;
-  letter-spacing: -0.5px;
-}
-
-h1 {
-  font-size: var(--fs-h1);
-}
-
-h2 {
-  font-size: var(--fs-h2);
-}
-
-body {
-  background-color: rgb(25, 45, 55);
-  font-family: var(--font-primary);
-  font-weight: var(--fw-regular);
-  color: #ccc;
-  line-height: 1.6;
-  overflow-x: hidden;
-  letter-spacing: 0.3px;
-}
-
-.logo {
-  color: rgb(25, 45, 55);
-  font-size: var(--fs-h3);
-  font-weight: 700;
-}
-
-img,
-video,
-iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--space-sm);
-}
-
-section {
-  margin-bottom: var(--space-lg);
-}
-
-.header {
-  background-color: #efefef;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 5px;
-}
-
-.footer {
-  text-align: center;
-  padding: var(--space-md);
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  list-style: none;
-}
-
-.actions {
-  display: flex;
-  gap: var(--space-xs);
-}
-
-@media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
+@import url('./pages/home.css');

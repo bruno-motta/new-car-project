@@ -1,0 +1,32 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.search input,
+.search select,
+.search button {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  .search {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .search input,
+  .search select {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .search button {
+    width: auto;
+  }
+}
