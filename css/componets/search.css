@@ -8,8 +8,9 @@
 .search input,
 .search select,
 .search button {
-  width: 100%;
-  padding: var(--space-sm);
+  width: 20px;
+  height: 35px;
+  padding: 4px 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
 }

@@ -1,10 +1,48 @@
 .header {
-  background-color: var(--color-light);
+  background-color:white;
+  color:  #14232d;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
-  padding: 5px;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: relative;
+}
+
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color:  #14232d;
+  cursor: pointer;
+}
+
+/* MENU */
+.menu {
+  display: none;
+
+  position: absolute;
+  top: 70px;
+  right: 20px;
+
+  background: #1c2f3d;
+  padding: 15px;
+
+  border-radius: 10px;
+
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* MENU ATIVO */
+.menu.active {
+  display: flex;
 }
 
 .logo {
