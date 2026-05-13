@@ -1,5 +1,5 @@
 // ==========================
-// ELEMENTOS
+// ELEMENTOS DO MODAL
 // ==========================
 
 const modal = document.getElementById("modal");
@@ -23,6 +23,8 @@ const modalPrice = document.getElementById("modalPrice");
 
 function openModal(car, img, desc, price) {
 
+  if (!modal) return;
+
   modalTitle.textContent = car;
 
   modalDesc.textContent = desc;
@@ -32,6 +34,7 @@ function openModal(car, img, desc, price) {
   modalImg.src = img;
 
   modal.style.display = "flex";
+
 }
 
 
@@ -41,43 +44,53 @@ function openModal(car, img, desc, price) {
 
 function closeModal() {
 
+  if (!modal) return;
+
   modal.style.display = "none";
 
 }
 
 
 // ==========================
-// EVENTOS DOS BOTÕES
+// BOTÕES DE DETALHES
 // ==========================
 
-detailButtons.forEach(button => {
+if (detailButtons.length > 0) {
 
-  button.addEventListener("click", () => {
+  detailButtons.forEach(button => {
 
-    const car = button.dataset.car;
+    button.addEventListener("click", () => {
 
-    const img = button.dataset.img;
+      const car = button.dataset.car;
 
-    const desc = button.dataset.desc;
+      const img = button.dataset.img;
 
-    const price = button.dataset.price;
+      const desc = button.dataset.desc;
 
-    openModal(car, img, desc, price);
+      const price = button.dataset.price;
+
+      openModal(car, img, desc, price);
+
+    });
 
   });
 
-});
+}
 
 
 // ==========================
-// FECHAR NO X
+// FECHAR NO BOTÃO X
 // ==========================
 
-closeBtn.addEventListener("click", closeModal);
+if (closeBtn) {
+
+  closeBtn.addEventListener("click", closeModal);
+
+}
 
 
 // ==========================
-// FECHAR FORA DO MODAL
+// FECHAR CLICANDO FORA
 // ==========================
 
 window.addEventListener("click", (event) => {
@@ -104,3 +117,22 @@ window.addEventListener("keydown", (event) => {
   }
 
 });
+
+
+// ==========================
+// MENU HAMBÚRGUER
+// ==========================
+
+const menuToggle = document.getElementById("menuToggle");
+
+const menu = document.getElementById("menu");
+
+if (menuToggle && menu) {
+
+  menuToggle.addEventListener("click", () => {
+
+    menu.classList.toggle("active");
+
+  });
+
+}
