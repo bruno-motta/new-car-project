@@ -8,6 +8,7 @@
     );
 
     color: #fff;
+
     padding-top: 60px;
     margin-top: 80px;
 
@@ -17,6 +18,7 @@
     0 -5px 30px rgba(0,0,0,0.4);
 }
 
+/* CONTAINER */
 .footer-container{
     width: 90%;
     max-width: 1400px;
@@ -24,52 +26,76 @@
     margin: auto;
 
     display: grid;
+
     grid-template-columns:
     repeat(auto-fit, minmax(250px, 1fr));
 
     gap: 40px;
 
     padding-bottom: 50px;
+
+    text-align: center;
+    align-items: center;
 }
 
+/* COLUNAS */
+.footer-brand,
+.footer-links,
+.footer-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* LOGO */
 .footer img{
-  margin-left: 60px;
+    margin: 0;
+    margin-bottom: 20px;
 }
 
+/* TEXTO */
 .footer-brand p{
     color: #c7d3df;
+
     line-height: 1.8;
+
     margin-bottom: 25px;
+
+    max-width: 320px;
 }
 
+/* TÍTULOS */
 .footer-links h3,
 .footer-contact h3{
     margin-bottom: 20px;
+
     font-size: 1.2rem;
+
     color: #5da9ff;
 }
 
+/* LINKS */
 .footer-links{
-    display: flex;
-    flex-direction: column;
     gap: 12px;
 }
 
 .footer-links a{
     color: #d5dde5;
+
     text-decoration: none;
 
     transition: 0.3s;
 }
 
-.footer-links a:hover{
-    color: #5da9ff;
-    transform: translateX(5px);
-}
+/* CONTATO */
 
 .footer-contact p{
     display: flex;
+
     align-items: center;
+    justify-content: center;
+
     gap: 10px;
 
     color: #d5dde5;
@@ -82,44 +108,38 @@
     font-size: 1.1rem;
 }
 
+/* REDES SOCIAIS */
 .socials{
     display: flex;
+
+    justify-content: center;
+    align-items: center;
+
     gap: 15px;
 }
 
 .socials a{
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.05);
-
-    color: #fff;
-    font-size: 1.2rem;
-
-    text-decoration: none;
-
     transition: 0.3s;
-
-    border: 1px solid rgba(255,255,255,0.08);
 }
 
-.socials a:hover{
-    background: #5da9ff;
+.socials img{
+    width: 28px;
+    height: 28px;
 
-    transform:
-    translateY(-5px)
-    scale(1.05);
-
-    box-shadow:
-    0 0 20px rgba(93,169,255,0.5);
+    object-fit: contain;
 }
 
+/* PARTE FINAL */
 .footer-bottom{
     border-top:
     1px solid rgba(255,255,255,0.08);
