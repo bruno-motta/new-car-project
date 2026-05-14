@@ -1,71 +1,75 @@
 .header {
-  background-color:white;
-  color:  #14232d;
+  background-color: white;
+  color: #14232d;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: 15px 20px;
+
   position: relative;
 }
 
 /* BOTÃO HAMBÚRGUER */
 .menu-toggle {
-  font-size: 28px;
+  font-size: 32px;
   background: none;
   border: none;
-  color:  #14232d;
+  color: #14232d;
   cursor: pointer;
+  z-index: 1001;
 }
 
-/* MENU */
+/* MENU LATERAL */
 .menu {
-  display: none;
+  position: fixed;
 
-  position: absolute;
-  top: 70px;
-  right: 20px;
+  top: 0;
+  right: 0;
+
+  width: 20vw;       /* 1/5 da tela */
+  min-width: 250px;  /* evita ficar pequeno demais */
+
+  height: 100vh;
 
   background: #1c2f3d;
-  padding: 15px;
 
-  border-radius: 10px;
-
+  display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  padding: 100px 25px;
+  gap: 20px;
+
+  box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+
+  /* ESCONDIDO */
+  transform: translateX(100%);
+
+  transition: transform 0.4s ease;
+
+  z-index: 1000;
 }
 
+/* LINKS */
 .menu a {
   color: white;
   text-decoration: none;
+
+  font-size: 20px;
   font-weight: 500;
+
+  transition: 0.3s;
 }
 
-/* MENU ATIVO */
+/* MENU ABERTO */
 .menu.active {
-  display: flex;
+  transform: translateX(0);
 }
 
-.logo {
-  color: var(--color-primary);
-  font-size: var(--fs-h3);
-  font-weight: 700;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  list-style: none;
-}
-
-.actions {
-  display: flex;
-  gap: var(--space-xs);
-}
-
-@media (min-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .menu {
+    width: 70vw;
   }
 }

@@ -136,3 +136,17 @@ if (menuToggle && menu) {
   });
 
 }
+
+document.addEventListener("click", (event) => {
+
+  const clicouNoMenu = menu.contains(event.target);
+
+  const clicouNoBotao = menuToggle.contains(event.target);
+
+  if (!clicouNoMenu && !clicouNoBotao) {
+
+    menu.classList.remove("active");
+
+  }
+
+});
