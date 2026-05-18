@@ -1,15 +1,22 @@
+/* 1. Camada de Tokens (Contratos Visuais e Arquitetura) */
+@import url("./tokens/primitives.css");
+@import url("./tokens/semantic.css");
+
+/* 2. Camada Base e Estilos Globais */
 @import url("./base/reset.css");
 @import url("./base/global.css");
-@import url("./base/variables.css");
 
+/* 3. Camada de Layout Estrutural */
 @import url("./layout/header.css");
 @import url("./layout/footer.css");
 
+/* 4. Camada de Componentes Isolados */
 @import url("./componets/buttons.css");
 @import url("./componets/cards.css");
 @import url("./componets/modal.css");
 @import url("./componets/search.css");
 
+/* 5. Camada de Páginas e Contextos Específicos */
 @import url("./pages/home.css");
 @import url("./pages/login.css");
 @import url("./pages/reserva.css");

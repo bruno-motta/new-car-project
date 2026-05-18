@@ -1,0 +1,14 @@
+:root {
+  /* Cores brutas da paleta */
+  --_slate-900: #0f172a;
+  --_blue-600: #2563eb;
+  
+  /* Escala base de espaçamento (Múltiplos de 4px/8px) */
+  --_space-1: 0.25rem; /* 4px */
+  --_space-2: 0.5rem;  /* 8px */
+  --_space-4: 1rem;     /* 16px */
+  --_space-6: 1.5rem;   /* 24px */
+
+  /* Escala de Tipografia */
+  --_font-size-3xl: 3rem;
+}
