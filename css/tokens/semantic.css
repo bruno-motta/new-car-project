@@ -1,0 +1,13 @@
+:root {
+  /* Contexto de Cores e Ações */
+  --color-surface-dark: var(--_slate-900);
+  --color-action-primary: var(--_blue-600);
+
+  /* Mapeamento de Espaçamento Semântico */
+  --spacing-sm: var(--_space-2);
+  --spacing-md: var(--_space-4);
+  --spacing-lg: var(--_space-6);
+
+  /* Mapeamento de Tipografia Semântica */
+  --font-size-heading-xl: var(--_font-size-3xl);
+}
