@@ -12,7 +12,8 @@
   --space-md: 1.5rem;
   --space-lg: 2rem;
 
-  --fs-base: clamp(0.95rem, 1.5vw, 1.05rem);
+  /* item 02 — mínimo garantido de 0.875rem (14px) em qualquer viewport */
+  --fs-base: clamp(0.875rem, 1.5vw, 1.05rem);
   --fs-h1: clamp(2rem, 5vw, 3rem);
   --fs-h2: clamp(1.4rem, 3vw, 2rem);
   --fs-h3: clamp(1.5rem, 2vw, 2.5rem);
@@ -33,6 +34,8 @@
 body {
   background-color: var(--color-primary);
   font-family: var(--font-primary);
+  /* item 02 — font-size base consumindo o token fluido */
+  font-size: var(--fs-base);
   color: var(--color-text);
   overflow-x: hidden;
 }
@@ -53,6 +56,13 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--space-sm);
+}
+
+@media (min-width: 1400px) {
+  main {
+    max-width: 1400px;
+    padding-inline: var(--space-lg);
+  }
 }
 
 .header {
@@ -81,9 +91,45 @@ main {
 }
 
 @media (min-width: 768px) {
-
   .header {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+:root {
+  font-size: clamp(16px, 1.1vw, 20px);
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --fs-base: clamp(1.1rem, 1.3vw, 1.25rem);
+    --fs-h1:   clamp(2.5rem, 5vw, 3.5rem);
+    --fs-h2:   clamp(1.8rem, 3vw, 2.4rem);
+    --fs-h3:   clamp(1.6rem, 2vw, 2.8rem);
+  }
+}
+
+/* Limitar largura de linhas de texto corrido */
+.hero p,
+.faq p {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-action-primary, #2563eb);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .login-btn:hover    { background: #16354d; transform: translateY(-2px); }
+  .menu a:hover       { opacity: 0.75; }
+  .footer-links a:hover { color: #fff; }
+  .search button:hover  { opacity: 0.9; }
 }
