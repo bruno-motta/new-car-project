@@ -1,7 +1,6 @@
 .header {
   background-color: white;
   color: #14232d;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +18,11 @@
   color: #14232d;
   cursor: pointer;
   z-index: 1001;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* MENU LATERAL */
@@ -28,8 +32,8 @@
   top: 0;
   right: 0;
 
-  width: 20vw;       /* 1/5 da tela */
-  min-width: 250px;  /* evita ficar pequeno demais */
+  width: 20vw;
+  min-width: 250px;
 
   height: 100vh;
 
@@ -43,9 +47,7 @@
 
   box-shadow: -5px 0 15px rgba(0,0,0,0.2);
 
-  /* ESCONDIDO */
   transform: translateX(100%);
-
   transition: transform 0.4s ease;
 
   z-index: 1000;
@@ -55,9 +57,11 @@
 .menu a {
   color: white;
   text-decoration: none;
-
   font-size: 20px;
   font-weight: 500;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 
   transition: 0.3s;
 }
@@ -67,9 +71,43 @@
   transform: translateX(0);
 }
 
-/* RESPONSIVO */
+/* MOBILE */
 @media (max-width: 768px) {
   .menu {
     width: 70vw;
+  }
+}
+
+@media (min-width: 900px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    height: auto;
+    width: auto;
+    min-width: unset;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 4px;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    z-index: auto;
+  }
+
+  .menu a {
+    font-size: 0.95rem;
+    color: #14232d;
+    padding: 8px 14px;
+    border-radius: 6px;
+  }
+
+  /* Foco por Tab visível no header claro */
+  .menu a:focus-visible {
+    outline-color: #2563eb;
+    background: rgba(37, 99, 235, 0.08);
   }
 }

@@ -18,6 +18,49 @@
   padding: 50px;
 }
 
+.cards-grid {
+  container-type: inline-size;
+  container-name: car-grid;
+ 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: var(--space-sm);
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+@container car-grid (min-width: 500px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .card {
+    text-align: left;
+  }
+}
+
+@container car-grid (min-width: 800px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.categories-list {
+  display: flex;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  padding: var(--space-sm);
+  scrollbar-width: thin;
+}
+
 @media (min-width: 768px) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
