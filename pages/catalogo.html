@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEW CAR - Reservas</title>
+  <title>NEW CAR - Catálogo de carros</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <header class="header">
@@ -36,41 +39,26 @@
 
   </header>
 
-  <main class="reservas-main">
 
-    <section class="reservas-header">
-      <h1>Minhas Reservas</h1>
-      <p>Acompanhe todos os veículos reservados por você.</p>
+  <main>
+    <section class="cars">
+      <h2>Todos os carros</h2><br>
+      <div class="cards-grid"></div>
     </section>
-
-    <section class="reservas-container">
-
-      <div class="reserva-card">
-        <img src="../assets/images/cars/BMW_X1.webp" alt="BMW X1"">
-        <div class="reserva-info">
-          <h2>BMW X1</h2>
-          <p>SUV premium com conforto, tecnologia e desempenho.</p>
-          <div class="reserva-details">
-            <span><i class="bi bi-calendar"></i> 15/06/2026</span>
-            <span><i class="bi bi-geo-alt"></i> João Pessoa</span>
-          </div>
-          <div class="reserva-footer">
-            <p>R$ 250/dia</p>
-            <button>Ver detalhes</button>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
   </main>
 
   <footer class="footer">
     <div class="footer-container">
 
       <div class="footer-brand">
-        <img src="../assets/images/ChatGPT Image 13 de mai. de 2026, 08_29_20.png" alt="Logo NEW CAR" width="200px">
-        <p>Sua plataforma moderna para aluguel de veículos com conforto, segurança e tecnologia.</p>
+        <img
+          src="../assets/images/ChatGPT Image 13 de mai. de 2026, 08_29_20.png"
+          alt="Logo NEW CAR" width="200px"
+        >
+        <p>
+          Sua plataforma moderna para aluguel de veículos com conforto,
+          segurança e tecnologia.
+        </p>
         <div class="socials">
           <a href="https://www.instagram.com" target="_blank">
             <img src="../assets/images/Instagram_icon.png" alt="Instagram">
@@ -105,6 +93,19 @@
     </div>
   </footer>
 
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImg" src="" alt="Imagem do carro">
+      <h2 id="modalTitle">Carro</h2>
+      <p id="modalDesc">Detalhes do carro</p>
+      <p id="modalPrice"></p>
+      <button class="btn-reserva">Reservar</button>
+    </div>
+  </div>
+
   <script src="../js/main.js"></script>
+
 </body>
 </html>

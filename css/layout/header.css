@@ -2,12 +2,51 @@
   background-color: white;
   color: #14232d;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-
+  flex-direction: column;
+  align-items: flex-start;
   padding: 15px 20px;
-
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header .logo-texto {
+  max-width: 180px;
+}
+
+.header .logo-texto {
+  max-width: 150px;
+  flex-shrink: 0;
+}
+
+/* Logo circular — só aparece no desktop */
+.header .logo-icon {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-container {
+    width: auto;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
 }
 
 /* BOTÃO HAMBÚRGUER */
