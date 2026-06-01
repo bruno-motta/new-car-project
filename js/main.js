@@ -11,7 +11,6 @@ const modalPrice = document.getElementById("modalPrice");
 
 // ==========================
 // CAMINHO BASE DAS IMAGENS
-// Corrige o caminho dependendo se está em /pages/ ou na raiz
 // ==========================
 
 const inPages = window.location.pathname.includes("/pages/");
@@ -33,22 +32,16 @@ const cars = [
   { name: "Honda Civic Type R", price: "R$ 190/dia", img: "HONDA_CIVIC.webp",             desc: "Sedan esportivo de alto desempenho, com suspensão esportiva e acabamento premium.",                             category: "Sedan"     },
   { name: "Renault Duster",     price: "R$ 150/dia", img: "RENAULT_DUSTER.webp",          desc: "SUV compacto com boa altura em relação ao solo, ideal para estradas variadas e aventuras.",                     category: "SUV"       },
   { name: "Nissan Kicks",       price: "R$ 160/dia", img: "NISSAN_KICKS.webp",            desc: "SUV moderno com design arrojado, espaço interno generoso e tecnologia embarcada.",                              category: "SUV"       },
-  { name: "Hyundai Creta",      price: "R$ 170/dia", img: "HYUNDAI_CRETA.webp",           desc: "SUV versátil com excelente relação custo-benefício, conforto e equipamentos completos.",                        category: "SUV"       },
-  { name: "Volkswagen Polo",    price: "R$ 140/dia", img: "VOLKSWAGEN_POLO.webp",         desc: "Hatchback compacto com qualidade europeia, econômico e fácil de estacionar na cidade.",                         category: "Hatchback" },
-  { name: "Jeep Compass",       price: "R$ 260/dia", img: "JEEP_COMPASS.webp",            desc: "SUV robusto com visual imponente, tração 4x4 e excelente desempenho em qualquer terreno.",                      category: "SUV"       },
-  { name: "Fiat Argo",          price: "R$ 130/dia", img: "FIAT_ARGO_1.3.webp",           desc: "Hatchback estiloso, ágil e econômico. Ótima opção para quem busca praticidade no dia a dia.",                   category: "Hatchback" },
 ];
 
 // ==========================
-// RENDERIZAR CARDS
+// GERAR HTML DE UM CARD
 // ==========================
 
-function renderCars(list) {
-  const grid = document.querySelector(".cards-grid");
-  if (!grid) return; // página sem grid (favoritos, reservas, login)
-  grid.innerHTML = list.map(car => `
+function carCard(car) {
+  return `
     <article class="card">
-      <img src="${imgBase}${car.img}" alt="${car.name}">
+      <img src="${imgBase}${car.img}" alt="${car.name}" loading="lazy">
       <h3>${car.name}</h3>
       <p>${car.price}</p>
       <button class="detalhe"
@@ -59,13 +52,48 @@ function renderCars(list) {
         Detalhes
       </button>
     </article>
-  `).join("");
+  `;
 }
+
+// ==========================
+// RENDERIZAR CARROS DISPONÍVEIS
+// ==========================
+
+function renderCars(list) {
+  const grid = document.getElementById("grid-disponiveis") ||
+               document.querySelector(".cards-grid"); // fallback para catalogo.html
+  if (!grid) return;
+  grid.innerHTML = list.map(carCard).join("");
+}
+
+// ==========================
+// RENDERIZAR MAIS ALUGADOS (aleatório)
+// ==========================
+
+function shuffleArray(arr) {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+function renderMaisAlugados() {
+  const grid = document.getElementById("grid-mais-alugados");
+  if (!grid) return;
+  grid.innerHTML = shuffleArray(cars).slice(0, 3).map(carCard).join("");
+}
+
+// ==========================
+// INICIALIZAR GRIDS
+// ==========================
 
 const isHomePage = window.location.pathname === "/" ||
                    window.location.pathname.endsWith("index.html");
 
-renderCars(isHomePage ? cars.slice(0, 9) : cars);
+renderCars(isHomePage ? cars.slice(0, 6) : cars);
+renderMaisAlugados();
 
 // ==========================
 // ABRIR MODAL
@@ -90,13 +118,15 @@ function closeModal() {
 }
 
 // ==========================
-// EVENT DELEGATION — BOTÕES DE DETALHES
+// EVENT DELEGATION — funciona em múltiplos grids
 // ==========================
 
-document.querySelector(".cards-grid")?.addEventListener("click", (e) => {
-  const btn = e.target.closest(".detalhe");
-  if (!btn) return;
-  openModal(btn.dataset.car, btn.dataset.img, btn.dataset.desc, btn.dataset.price);
+document.querySelectorAll(".cards-grid").forEach(grid => {
+  grid.addEventListener("click", (e) => {
+    const btn = e.target.closest(".detalhe");
+    if (!btn) return;
+    openModal(btn.dataset.car, btn.dataset.img, btn.dataset.desc, btn.dataset.price);
+  });
 });
 
 // ==========================
@@ -133,6 +163,11 @@ const menu = document.getElementById("menu");
 if (menuToggle && menu) {
   menuToggle.addEventListener("click", () => {
     menu.classList.toggle("active");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      menu.classList.contains("active")
+    );
   });
 }
 
@@ -143,3 +178,6 @@ document.addEventListener("click", (event) => {
     menu.classList.remove("active");
   }
 });
+
+menu.classList.toggle("active");
+
