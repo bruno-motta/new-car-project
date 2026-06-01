@@ -20,3 +20,8 @@
   text-decoration: none;
   padding-top: var(--space-sm);
 }
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}

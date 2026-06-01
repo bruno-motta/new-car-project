@@ -32,9 +32,9 @@
 
     <nav class="menu" id="menu">
       <a href="../index.html">Home</a>
-      <a href="/pages/login.html">Login</a>
-      <a href="/pages/favorito.html">Favoritos</a>
-      <a href="/pages/reservas.html">Reserva</a>
+      <a href="login.html">Login</a>
+      <a href="favorito.html">Favoritos</a>
+      <a href="reservas.html">Reserva</a>
     </nav>
 
   </header>
@@ -60,14 +60,14 @@
           segurança e tecnologia.
         </p>
         <div class="socials">
-          <a href="https://www.instagram.com" target="_blank">
-            <img src="../assets/images/Instagram_icon.png" alt="Instagram">
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/images/Instagram_icon.png" alt="Instagram" width="32px" height="32px">
           </a>
-          <a href="https://www.facebook.com" target="_blank">
-            <img src="../assets/images/Facebook_icon_2013.svg.png" alt="Facebook">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/images/Facebook_icon_2013.svg.png" alt="Facebook" width="32px" height="32px">
           </a>
-          <a href="https://wa.me/5583999999999" target="_blank">
-            <img src="../assets/images/whatsapp.png" alt="WhatsApp">
+          <a href="https://wa.me/5583999999999" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/images/whatsapp.png" alt="WhatsApp" width="32px" height="32px">
           </a>
         </div>
       </div>
@@ -96,7 +96,11 @@
   <!-- MODAL -->
   <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <button
+        class="close"
+        aria-label="Fechar modal">
+        &times;
+    </button>
       <img id="modalImg" src="" alt="Imagem do carro">
       <h2 id="modalTitle">Carro</h2>
       <p id="modalDesc">Detalhes do carro</p>
@@ -105,7 +109,7 @@
     </div>
   </div>
 
-  <script src="../js/main.js"></script>
+  <script src="../js/main.js" defer></script>
 
 </body>
 </html>
