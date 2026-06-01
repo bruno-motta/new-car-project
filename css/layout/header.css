@@ -33,6 +33,7 @@
 }
 
 @media (min-width: 900px) {
+<<<<<<< HEAD
 
   .header {
     flex-direction: row;
@@ -46,6 +47,10 @@
 
   .menu-toggle {
     display: none;
+=======
+  .logo-icon {
+    display: block;
+>>>>>>> origin/main
   }
 }
 
