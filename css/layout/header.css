@@ -4,10 +4,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 15px 20px;
-
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header .logo-texto {
+  max-width: 150px;
+  flex-shrink: 0;
+}
+
+/* Logo circular — só aparece no desktop */
+.header .logo-icon {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+  .logo-icon {
+    display: block;
+  }
 }
 
 /* BOTÃO HAMBÚRGUER */

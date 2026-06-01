@@ -6,131 +6,92 @@
   <title>NEW CAR - Favoritos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-
 </head>
 <body>
 
 <header class="header">
-  <img src="../assets/images/ChatGPT Image 13 de mai. de 2026, 08_29_20.png" alt="Logo NEW CAR" width="200px">
-  <img src="../assets/images/logo-2.png" alt="Logo NEW CAR">
-
-  <button class="menu-toggle" id="menuToggle">☰</button>
-
-  <nav class="menu" id="menu">
-    <a href="../index.html">Home</a>
-    <a href="login.html">Login</a>
-    <a href="favorito.html">Favoritos</a>
-    <a href="reservas.html">Reserva</a>
-  </nav>
+  <a href="../index.html">
+    <img src="../assets/images/ChatGPT Image 13 de mai. de 2026, 08_29_20.png" alt="Logo NEW CAR" class="logo-texto">
+  </a>
+  
+  <img src="../assets/images/logo-2.png" alt="Logo NEW CAR" class="logo-icon">
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav class="menu" id="menu">
+      <a href="../index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="favorito.html">Favoritos</a>
+      <a href="reservas.html">Reserva</a>
+    </nav>
+  </div>
 </header>
 
 <main class="favoritos-main">
 
   <section class="favoritos-header">
-
     <h1>Veículos Favoritos</h1>
-
-    <p>
-      Seus carros salvos para futuras reservas.
-    </p>
-
+    <p>Seus carros salvos para futuras reservas.</p>
   </section>
 
   <section class="favoritos-container">
 
-    <!-- CARD -->
     <div class="favorito-card">
-
-      <img
-        src="/assets/images/69022-26530-HB20-SENSE-1.png"
-        alt="HB20"
-      >
-
+      <img src="../assets/images/cars/BMW_X1.webp" alt="BMW X1">
       <div class="favorito-info">
-
-        <h2>HB20 Comfort</h2>
-
-        <p>
-          Econômico, confortável e perfeito
-          para o dia a dia.
-        </p>
-
+        <h2>BMW X1</h2>
+        <p>SUV premium com tecnologia de ponta, automático e confortável.</p>
         <div class="favorito-footer">
-
-          <strong>R$ 120/dia</strong>
-
+          <strong>R$ 250/dia</strong>
           <div class="favorito-actions">
             <button>Reservar</button>
-
             <i class="bi bi-heart-fill"></i>
           </div>
-
         </div>
-
       </div>
-
     </div>
 
   </section>
 
 </main>
 
-  <!-- FOOTER -->
-
-  <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
 
     <div class="footer-brand">
-      <img
-    src="/assets/images/ChatGPT Image 13 de mai. de 2026, 08_29_20.png"
-    alt="Logo NEW CAR" width="200px"
-  >
-
-      <p>
-        Sua plataforma moderna para aluguel de veículos com conforto,
-        segurança e tecnologia.
-      </p>
-
+      <img src="../assets/images/ChatGPT Image 13 de mai. de 2026, 08_29_20.png" alt="Logo NEW CAR" width="200px">
+      <p>Sua plataforma moderna para aluguel de veículos com conforto, segurança e tecnologia.</p>
       <div class="socials">
-
         <a href="https://www.instagram.com" target="_blank">
-          <img src="/assets/images/Instagram_icon.png" alt="Instagram">
+          <img src="../assets/images/Instagram_icon.png" alt="Instagram">
         </a>
-
         <a href="https://www.facebook.com" target="_blank">
-          <img src="/assets/images/Facebook_icon_2013.svg.png" alt="Facebook">
+          <img src="../assets/images/Facebook_icon_2013.svg.png" alt="Facebook">
         </a>
-
         <a href="https://wa.me/5583999999999" target="_blank">
-          <img src="/assets/images/whatsapp.png" alt="WhatsApp">
+          <img src="../assets/images/whatsapp.png" alt="WhatsApp">
         </a>
-
       </div>
     </div>
 
     <div class="footer-links">
       <h3>Navegação</h3>
-
-    <a href="index.html">Home</a>
-    <a href="/pages/login.html">Login</a>
-    <a href="/pages/favorito.html">Favoritos</a>
-    <a href="/pages/reservas.html">Reserva</a>
+      <a href="../index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="favorito.html">Favoritos</a>
+      <a href="reservas.html">Reserva</a>
     </div>
 
     <div class="footer-contact">
       <h3>Contato</h3>
-
-      <p><i class="bi bi-envelope"></i> claudioribeiro@gmail.com</p>
-      <p><i class="bi bi-telephone"></i> (83) 99999-9999</p>
-      <p><i class="bi bi-geo-alt"></i> João Pessoa - PB</p>
+      <p>newdriver@contato.com</p>
+      <p>(83) 99999-9999</p>
+      <p>João Pessoa - PB</p>
     </div>
 
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 NEWDRIVE - Todos os direitos reservados.</p>
   </div>
-  
 </footer>
 
 <script src="../js/main.js"></script>
