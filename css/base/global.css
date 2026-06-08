@@ -45,6 +45,14 @@ h2,
 h3 {
   font-family: var(--font-heading);
   color: #fff;
+  padding: var(--space-xs) var(--space-sm);
+}
+
+a{
+  font-family: var(--font-heading);
+  color: #fff;
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-sm);
 }
 
 img {
@@ -115,6 +123,8 @@ main {
 .faq p {
   max-width: 65ch;
   margin-inline: auto;
+  padding: var(--space-xs);
+
 }
 
 :focus {
